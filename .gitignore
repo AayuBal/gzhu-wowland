@@ -24,12 +24,14 @@ dist/
 !/public/assets/ASSET_SOURCES.md
 !/public/assets/official_banner_full.jpg
 !/public/assets/official_coding_cone.png
+!/public/assets/official_cloud_join.png
 !/public/assets/official_kv_horizontal.jpg
 !/public/assets/official_kv_vertical.jpg
 !/public/assets/official_pixel_title.png
 !/public/assets/official_runner.png
 !/public/assets/official_token_cat.png
 !/public/assets/official_wowland_logo.png
+!/public/assets/wechat_lead_qr.jpg
 !/public/assets/gzhu-campus-gate-pixel.webp
 !/public/assets/gzhu-campus-lake-pixel.webp
 !/public/assets/gzhu-campus-teaching-pixel.webp

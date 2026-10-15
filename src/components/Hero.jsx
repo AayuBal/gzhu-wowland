@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CalendarDays, MapPin, QrCode, Sparkles } from 'lucide-react';
+import { ArrowRight, CalendarDays, QrCode, Sparkles } from 'lucide-react';
 import promptsData from '../data/prompts.json';
 
 const CAMPUS_SLIDES = [
@@ -53,22 +53,22 @@ export const Hero = ({ onOpenQrModal }) => {
               <span>把想法做成作品。</span>
             </h1>
             <p className="hero-description">
-              从 AI 实践、技术共学到内容创作，和抖音校园 WowLand 一起，把校园里的灵感变成真实行动。
+              一个持续开放的校园共学与共创社群。和抖音校园 WowLand 一起，从 AI 实践、同伴连接到内容创作，把好奇心变成一次次真实行动。
             </p>
 
             <div className="hero-actions">
               <button type="button" onClick={onOpenQrModal} className="pixel-button pixel-button-primary">
                 <QrCode className="w-4 h-4" />
-                <span>加入官方社群</span>
+                <span>加入社群</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <a href="#prompts" className="pixel-button pixel-button-secondary">
+              <a href="#pillars" className="pixel-button pixel-button-secondary">
                 <Sparkles className="w-4 h-4" />
-                <span>逛逛 AI 宝典</span>
+                <span>了解四条成长线</span>
               </a>
               <a href="#event" className="hero-text-link">
                 <CalendarDays className="w-4 h-4" />
-                <span>10.24 校园活动</span>
+                <span>查看近期活动</span>
               </a>
             </div>
 
@@ -95,6 +95,12 @@ export const Hero = ({ onOpenQrModal }) => {
                   if (!event.currentTarget.contains(event.relatedTarget)) setActiveCampusIndex(null);
                 }}
               >
+                <svg className="campus-gallery-connector campus-gallery-connector-desktop" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 25 10 C 42 3, 59 3, 75 12 S 72 43, 50 55" />
+                </svg>
+                <svg className="campus-gallery-connector campus-gallery-connector-mobile" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 30 5 C 82 7, 93 21, 72 36 S 8 53, 50 68" />
+                </svg>
                 {CAMPUS_SLIDES.map((slide, index) => (
                   <button
                     key={slide.title}
@@ -111,9 +117,10 @@ export const Hero = ({ onOpenQrModal }) => {
                       <strong>{slide.title}</strong>
                       <span>{slide.caption}</span>
                     </span>
-                    <MapPin className="campus-gallery-pin" aria-hidden="true" />
+                    <span className="campus-gallery-tack" aria-hidden="true" />
                   </button>
                 ))}
+                <span className="campus-gallery-tack campus-gallery-tack-floating" aria-hidden="true" />
               </div>
             </div>
             <div className="hero-art-caption">
@@ -130,7 +137,7 @@ export const Hero = ({ onOpenQrModal }) => {
           <span>把作品做出来</span>
           <span className="strip-star">✳</span>
           <span>把校园连接起来</span>
-          <span className="strip-end">2026 招新季</span>
+          <span className="strip-end">持续开放 · 一起行动</span>
         </div>
       </div>
     </section>

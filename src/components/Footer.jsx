@@ -2,12 +2,14 @@ import React from 'react';
 import { ArrowUp, QrCode, ShieldCheck } from 'lucide-react';
 
 const FOOTER_LINKS = [
-  { label: '活动指南', href: '#event' },
+  { label: '四条成长线', href: '#pillars' },
+  { label: '活动形式', href: '#activities' },
+  { label: '近期活动', href: '#event' },
+  { label: '往期回顾', href: '#archive' },
   { label: 'AI 宝典', href: '#prompts' },
-  { label: '成长项目', href: '#pillars' },
 ];
 
-export const Footer = ({ onOpenQrModal, isPromptsPage = false, onNavigateHome }) => {
+export const Footer = ({ onOpenQrModal, isSubPage = false, onNavigateHome }) => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const handleJoin = (event) => {
@@ -17,7 +19,7 @@ export const Footer = ({ onOpenQrModal, isPromptsPage = false, onNavigateHome })
   };
 
   const handlePageLink = (event, href) => {
-    if (isPromptsPage && href !== '#prompts' && onNavigateHome) {
+    if (isSubPage && onNavigateHome) {
       event.preventDefault();
       onNavigateHome(href.slice(1));
     }
@@ -37,12 +39,12 @@ export const Footer = ({ onOpenQrModal, isPromptsPage = false, onNavigateHome })
               <img src="/assets/official_wowland_logo.png" alt="WowLand" className="w-[116px] h-auto" />
             </div>
             <p className="footer-mission">
-              广州大学 WowLand 青年科技社群，和抖音校园一起把 AI 实践、技术共学与内容创作带进校园生活。
+              由广州大学在校学生自主发起与维护的 WowLand 校园共创页面，记录同学们的 AI 实践、内容创作与成长行动。
             </p>
             <div className="footer-ecosystem-tags">
-              <span>广州大学</span>
-              <span>抖音校园 WowLand</span>
-              <span>字节跳动生态支持</span>
+              <span>学生自主创作</span>
+              <span>校园兴趣交流</span>
+              <span>WowLand 项目灵感</span>
             </div>
           </div>
 
@@ -64,13 +66,14 @@ export const Footer = ({ onOpenQrModal, isPromptsPage = false, onNavigateHome })
 
         <div className="footer-note">
           <ShieldCheck className="w-4 h-4 shrink-0" />
-          <p>
-            本页面用于广州大学 WowLand 校园交流与 AI 实践展示。社群由在校学生自主建设，字节跳动与抖音校园生态支持信息以官方活动物料为准。
-          </p>
+          <div>
+            <strong>学生自主创作声明</strong>
+            <p>本站及相关校园内容由在校学生自主策划、设计与维护，用于学生交流和作品展示，不代表广州大学官方立场，也不构成学校对活动安排或权益的承诺。抖音校园 WowLand 项目信息请以其正式发布为准。</p>
+          </div>
         </div>
 
         <div className="footer-bottom">
-          <p>© 2026 广州大学 WowLand 青年科技社群</p>
+          <p>© 2026 WowLand 广大学生共创站</p>
           <button type="button" onClick={scrollToTop} className="back-to-top" aria-label="返回页面顶部">
             <span>回到顶部</span>
             <ArrowUp className="w-4 h-4" />

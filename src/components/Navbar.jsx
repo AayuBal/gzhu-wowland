@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Menu, QrCode, X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { name: '活动指南', href: '#event' },
-  { name: '官方社群', href: '#community' },
+  { name: '四条成长线', href: '#pillars' },
+  { name: '活动形式', href: '#activities' },
+  { name: '近期活动', href: '#event' },
+  { name: '往期回顾', href: '#archive' },
+  { name: '加入社群', href: '#community' },
   { name: 'AI 宝典', href: '#prompts' },
-  { name: '成长项目', href: '#pillars' },
 ];
 
-export const Navbar = ({ onOpenQrModal, isPromptsPage = false, onNavigateHome }) => {
+export const Navbar = ({ onOpenQrModal, isSubPage = false, onNavigateHome }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,7 +24,7 @@ export const Navbar = ({ onOpenQrModal, isPromptsPage = false, onNavigateHome })
 
   const handlePageLink = (event, href) => {
     handleLinkClick();
-    if (isPromptsPage && href !== '#prompts' && onNavigateHome) {
+    if (isSubPage && onNavigateHome) {
       event.preventDefault();
       onNavigateHome(href.slice(1));
     }

@@ -82,7 +82,7 @@ export function AiPortal({ onOpenQrModal, fullPage = false }) {
       <div id="ai-portal" className="sr-only" aria-hidden="true" />
 
       {/* Background Decor Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-cyber-cyan/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] max-w-full h-[350px] bg-cyber-cyan/5 blur-[140px] pointer-events-none rounded-full" />
 
       {/* Section Header */}
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10 pb-6 border-b border-white/10">
