@@ -1,0 +1,37 @@
+# Local dependencies and build output
+node_modules/
+dist/
+.DS_Store
+.agents/
+
+# Project planning and internal working materials
+/01_官方物料与设计资产/
+/02_策划与立项方案/
+/03_执行分工与进度表/
+/04_AI知识库与共学手册/
+/05_开发交付与PRD规范/
+/TEST_READY.md
+/tests/
+
+# Unused internal team roster and its private links
+/src/data/team.json
+/src/components/TeamSection.jsx
+/src/components/TeamCard.jsx
+/public/qr_douyin_circle.png
+
+# Keep only image assets used by the public website
+/public/assets/*
+!/public/assets/ASSET_SOURCES.md
+!/public/assets/official_banner_full.jpg
+!/public/assets/official_coding_cone.png
+!/public/assets/official_kv_horizontal.jpg
+!/public/assets/official_kv_vertical.jpg
+!/public/assets/official_pixel_title.png
+!/public/assets/official_runner.png
+!/public/assets/official_token_cat.png
+!/public/assets/official_wowland_logo.png
+!/public/assets/gzhu-campus-gate-pixel.webp
+!/public/assets/gzhu-campus-lake-pixel.webp
+!/public/assets/gzhu-campus-teaching-pixel.webp
+!/public/assets/gzhu-official-logo.png
+
