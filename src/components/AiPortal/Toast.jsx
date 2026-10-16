@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { CheckCircle2, Sparkles, X } from 'lucide-react';
 
-const DEFAULT_MESSAGE = '已复制到剪贴板！可直接粘贴至对应大模型使用';
+const DEFAULT_MESSAGE = '提示词已复制到剪贴板';
 
 /**
  * 赛博绿光胶囊 Toast 提示组件 (支持高频点击防抖与平滑延展)

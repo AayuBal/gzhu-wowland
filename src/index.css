@@ -1473,21 +1473,6 @@
   border-top: 1px solid rgba(23, 23, 20, 0.12);
 }
 
-.prompt-card-models {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.prompt-card-models span {
-  padding: 4px 6px;
-  border: 1px solid rgba(23, 23, 20, 0.15);
-  background: #f8f7f2;
-  color: #5c5c53;
-  font-size: 9px;
-  line-height: 1;
-}
-
 .prompt-copy-button {
   display: inline-flex;
   flex: 0 0 auto;

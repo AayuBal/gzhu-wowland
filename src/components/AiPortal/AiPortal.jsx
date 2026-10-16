@@ -17,7 +17,7 @@ export function AiPortal({ onOpenQrModal, fullPage = false }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [toast, setToast] = useState({
     visible: false,
-    message: '已复制到剪贴板！可直接粘贴至对应大模型使用',
+    message: '提示词已复制到剪贴板',
     subtitle: '',
   });
 
@@ -62,7 +62,7 @@ export function AiPortal({ onOpenQrModal, fullPage = false }) {
   const handleCopyTrigger = (text, title) => {
     setToast({
       visible: true,
-      message: '已复制到剪贴板！可直接粘贴至对应大模型使用',
+      message: '提示词已复制到剪贴板',
       subtitle: title || '',
     });
   };

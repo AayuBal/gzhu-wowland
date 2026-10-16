@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check, ChevronDown, ChevronUp, Bot, Sparkles } from 'lucide-react';
+import { Copy, Check, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import { copyToClipboard } from '../../utils/clipboard';
 
 const CATEGORY_NAMES = {
@@ -9,31 +9,6 @@ const CATEGORY_NAMES = {
   career: '求职与比赛',
   campus: '广大学子定制',
 };
-
-/**
- * 根据大模型名称返回对应科技配色的徽章类名
- * @param {string} modelName
- * @returns {string} Tailwind CSS class names
- */
-function getModelBadgeStyle(modelName = '') {
-  const lower = modelName.toLowerCase();
-  if (lower.includes('deepseek')) {
-    return 'bg-cyan-500/15 text-cyan-300 border-cyan-500/40 shadow-[0_0_8px_rgba(6,182,212,0.2)]';
-  }
-  if (lower.includes('豆包')) {
-    return 'bg-[#FE2C55]/15 text-[#FE2C55] border-[#FE2C55]/40 shadow-[0_0_8px_rgba(254,44,85,0.2)]';
-  }
-  if (lower.includes('gpt') || lower.includes('dall-e')) {
-    return 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40 shadow-[0_0_8px_rgba(16,185,129,0.2)]';
-  }
-  if (lower.includes('claude')) {
-    return 'bg-amber-500/15 text-amber-300 border-amber-500/40 shadow-[0_0_8px_rgba(245,158,11,0.2)]';
-  }
-  if (lower.includes('即梦') || lower.includes('midjourney')) {
-    return 'bg-purple-500/15 text-purple-300 border-purple-500/40 shadow-[0_0_8px_rgba(168,85,247,0.2)]';
-  }
-  return 'bg-blue-500/15 text-blue-300 border-blue-500/40';
-}
 
 /**
  * AI 生产力提示词卡片组件
@@ -75,11 +50,6 @@ export function PromptCard({ prompt, onCopy, compact = false }) {
         <h3>{prompt.title}</h3>
         <p>{prompt.description}</p>
         <div className="prompt-card-compact-footer">
-          <div className="prompt-card-models" aria-label="适配模型">
-            {(prompt.targetModels || prompt.models || []).slice(0, 2).map((model, index) => (
-              <span key={`${model}-${index}`}>{model}</span>
-            ))}
-          </div>
           <button type="button" onClick={handleCopy} className="prompt-copy-button" aria-label={`复制${prompt.title}`}>
             {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
             <span>{copied ? '已复制' : '复制模板'}</span>
@@ -111,24 +81,6 @@ export function PromptCard({ prompt, onCopy, compact = false }) {
         <h3 className="text-base font-bold text-white leading-snug mb-2 group-hover:text-cyber-cyan transition-colors">
           {prompt.title}
         </h3>
-
-        {/* Target Model Badges */}
-        <div className="flex flex-wrap items-center gap-1.5 mb-3">
-          <div className="inline-flex items-center gap-1 text-[10px] text-slate-400 mr-1">
-            <Bot className="w-3 h-3" />
-            <span>适配:</span>
-          </div>
-          {(prompt.targetModels || prompt.models || []).map((model, idx) => (
-            <span
-              key={idx}
-              className={`text-[10px] px-2 py-0.5 rounded-md border font-medium transition-all ${getModelBadgeStyle(
-                model
-              )}`}
-            >
-              {model}
-            </span>
-          ))}
-        </div>
 
         {/* Description */}
         <p className="text-xs text-slate-400 leading-relaxed mb-3.5">
@@ -186,11 +138,7 @@ export function PromptCard({ prompt, onCopy, compact = false }) {
       </div>
 
       {/* Card Action Footer */}
-      <div className="pt-2 border-t border-white/5 flex items-center justify-between gap-3">
-        <span className="text-[11px] text-slate-400">
-          已适配主流大模型
-        </span>
-
+      <div className="pt-2 border-t border-white/5 flex items-center justify-end gap-3">
         {/* 1-Click Copy Button */}
         <button
           type="button"

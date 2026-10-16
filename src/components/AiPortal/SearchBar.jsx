@@ -61,7 +61,7 @@ export function SearchBar({
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="搜索提示词名称、标签、模型 (DeepSeek/豆包) 或核心内容..."
+            placeholder="搜索提示词名称、标签或核心内容..."
             className="w-full pl-10 pr-10 py-3 rounded-xl bg-[#14161F]/90 border border-white/10 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan shadow-inner transition-all duration-200"
           />
 

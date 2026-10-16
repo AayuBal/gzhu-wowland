@@ -15,7 +15,7 @@ export function filterPrompts(prompts, activeCategory = 'all', searchQuery = '')
       return false;
     }
 
-    // 2. Search query check (title, description, prompt, id, tags, models)
+    // 2. Search query check (title, description, prompt, id, tags)
     if (!query) return true;
 
     const matchTitle = item.title?.toLowerCase().includes(query);
@@ -23,9 +23,6 @@ export function filterPrompts(prompts, activeCategory = 'all', searchQuery = '')
     const matchPrompt = item.prompt?.toLowerCase().includes(query);
     const matchId = item.id?.toLowerCase().includes(query);
     const matchTags = Array.isArray(item.tags) && item.tags.some((t) => (t || '').toLowerCase().includes(query));
-    const modelsList = item.targetModels || item.models || [];
-    const matchModels = Array.isArray(modelsList) && modelsList.some((m) => (m || '').toLowerCase().includes(query));
-
-    return Boolean(matchTitle || matchDesc || matchPrompt || matchId || matchTags || matchModels);
+    return Boolean(matchTitle || matchDesc || matchPrompt || matchId || matchTags);
   });
 }
