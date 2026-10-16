@@ -3,8 +3,8 @@ import { ArrowUpRight, CalendarDays, ChevronDown, Clock3, ExternalLink, Gift, Ma
 import { calculateTimeRemaining, padZero } from '../utils/countdown';
 import eventData from '../data/event.json';
 
-const START = eventData.countdown_target || '2026-10-24T10:00:00+08:00';
-const END = '2026-10-24T18:00:00+08:00';
+const START = eventData.countdown_target || '2026-10-31T10:00:00+08:00';
+const END = '2026-10-31T18:00:00+08:00';
 
 export const CountdownGuide = () => {
   const [expanded, setExpanded] = useState(false);
@@ -26,10 +26,10 @@ export const CountdownGuide = () => {
       <div id="booth" className="sr-only" aria-hidden="true" />
       <div className="recent-event-label"><span className="section-eyebrow">RECENT EVENT / 近期活动</span><span>01 / CAMPUS CALENDAR</span></div>
       <div className="recent-event-card">
-        <div className="recent-event-date" aria-label="2026 年 10 月 24 日"><strong>24</strong><span>OCT<br />2026</span></div>
+        <div className="recent-event-date" aria-label="2026 年 10 月 31 日"><strong>31</strong><span>OCT<br />2026</span></div>
         <div className="recent-event-copy">
           <span className="recent-event-state">{isFinished ? '活动已结束' : isLive ? '活动进行中' : '即将到来'}</span>
-          <h2>10.24 广大校园活动</h2>
+          <h2>10.31 广大校园活动</h2>
           <p>在红棉路遇见 WowLand：现场体验 AI 创作，认识一起行动的同学。</p>
           <div className="recent-event-meta"><span><Clock3 size={15} aria-hidden="true" />10:00—18:00</span><span><MapPin size={15} aria-hidden="true" />大学城校区红棉路</span></div>
         </div>
@@ -42,7 +42,7 @@ export const CountdownGuide = () => {
         <div className="event-plan-inner">
           <div className="event-plan-content">
             <div className="event-plan-heading">
-              <div><span className="section-eyebrow">10.24 / EVENT GUIDE</span><h3>一天的 WowLand，怎么逛？</h3></div>
+              <div><span className="section-eyebrow">10.31 / EVENT GUIDE</span><h3>一天的 WowLand，怎么逛？</h3></div>
               {isFinished ? <span className="event-status">活动已结束</span> : isLive ? <span className="event-status">现场进行中</span> : <span className="event-status">距离开放 {padZero(timeLeft.days)} 天 {padZero(timeLeft.hours)} 时 {padZero(timeLeft.minutes)} 分</span>}
             </div>
             <div className="event-plan-grid">
@@ -50,7 +50,7 @@ export const CountdownGuide = () => {
                 <MapPin size={25} aria-hidden="true" />
                 <span className="event-detail-kicker">01 / FIND US</span>
                 <h4>找到我们的展位</h4>
-                <p>广州大学大学城校区红棉路，生活区一食堂附近。活动时间为 2026 年 10 月 24 日 10:00—18:00。</p>
+                <p>广州大学大学城校区红棉路，生活区一食堂附近。活动时间为 2026 年 10 月 31 日 10:00—18:00。</p>
               </article>
               <article className="event-detail-card event-detail-lime">
                 <Gift size={25} aria-hidden="true" />
